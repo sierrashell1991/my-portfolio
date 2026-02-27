@@ -18,19 +18,7 @@ const COLORS = {
   successGreen: "#047857",
 };
 
-// eslint-disable-next-line react-hooks/exhaustive-deps
 const useInView = (threshold = 0.15) => {
-```
-
-That comment tells the build to ignore the ESLint warning entirely. Save with `Cmd + S`, then run:
-```
-git add .
-```
-```
-git commit -m "Disable ESLint warning"
-```
-```
-git push
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
   useEffect(() => {
@@ -40,24 +28,8 @@ git push
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
-  }, [threshold]);
-```
-
-Save with `Cmd + S`.
-
----
-
-## Fix 2: Push the change to GitHub
-
-In your Terminal run:
-```
-git add .
-```
-```
-git commit -m "Fix ESLint warning"
-```
-```
-git push
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return [ref, inView];
 };
 
@@ -393,7 +365,7 @@ const OpportunitySection = () => (
             fontSize: 17, lineHeight: 1.8, color: COLORS.darkGray,
             margin: 0, fontWeight: 400,
           }}>
-            SAS's AI Governance Advisory service is already positioning SAS as that trusted partner. SAS customers face mounting AI governance requirements, including EU AI Act compliance, sector-specific regulations, and NIST AI RMF implementation, but lack the expertise to act on them: <strong>processing existing AI governance assessments to benchmark where customers stand against applicable frameworks, facilitating governance workshops that translate regulatory requirements into actionable internal policies, and delivering tailored implementation roadmaps that connect governance obligations directly to SAS product capabilities.</strong>
+            SAS's AI Governance Advisory service is already positioning SAS as that trusted partner. SAS customers face mounting AI governance requirements, including EU AI Act compliance, sector-specific regulations, and NIST AI RMF implementation, but lack the expertise to act on them: conducting readiness assessments to benchmark where customers stand against applicable frameworks, facilitating governance workshops that translate regulatory requirements into actionable internal policies, and delivering tailored implementation roadmaps that connect governance obligations directly to SAS product capabilities.
           </p>
           <p style={{
             fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
