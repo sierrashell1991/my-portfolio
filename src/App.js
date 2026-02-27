@@ -18,7 +18,19 @@ const COLORS = {
   successGreen: "#047857",
 };
 
+// eslint-disable-next-line react-hooks/exhaustive-deps
 const useInView = (threshold = 0.15) => {
+```
+
+That comment tells the build to ignore the ESLint warning entirely. Save with `Cmd + S`, then run:
+```
+git add .
+```
+```
+git commit -m "Disable ESLint warning"
+```
+```
+git push
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
   useEffect(() => {
@@ -28,7 +40,24 @@ const useInView = (threshold = 0.15) => {
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
-  }, []);
+  }, [threshold]);
+```
+
+Save with `Cmd + S`.
+
+---
+
+## Fix 2: Push the change to GitHub
+
+In your Terminal run:
+```
+git add .
+```
+```
+git commit -m "Fix ESLint warning"
+```
+```
+git push
   return [ref, inView];
 };
 
