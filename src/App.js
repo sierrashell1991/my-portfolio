@@ -62,7 +62,6 @@ const NavBar = ({ activeSection }) => {
     { id: "opportunity", label: "The Opportunity" },
     { id: "credentials", label: "Credentials" },
     { id: "value", label: "Value Delivered" },
-    { id: "why", label: "Why Me" },
   ];
 
   const scrollTo = (id) => {
@@ -121,7 +120,7 @@ const NavBar = ({ activeSection }) => {
 const FLIP_CARDS = [
   {
     front: "I built our AI governance tools.",
-    back: "I co-designed SAS's AI Governance Navigator, the NIST AI RMF-based Trustworthy AI Life Cycle Workflow, and our patented Model Card. I know exactly how these tools work, where they excel, and where customers need more than our products can give them.",
+    back: "I co-designed SAS's AI Navigator, the NIST AI RMF-based Trustworthy AI Life Cycle Workflow, and our patented Model Card. I know exactly how these tools work, where they excel, and where customers need more than our products can give them.",
   },
   {
     front: "I've studied why governance fails.",
@@ -241,29 +240,21 @@ const Hero = () => (
           fontSize: 11, fontWeight: 700, letterSpacing: "0.12em",
           color: "rgba(255,255,255,0.9)", textTransform: "uppercase",
         }}>
-          Internal Transition Brief · SAS Institute
+          Application, Senior AI Governance Advisor · SAS Institute
         </span>
       </div>
 
-      {/* Name + Title */}
+      {/* Name */}
       <h1 style={{
         fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
         fontSize: "clamp(40px, 6vw, 72px)",
         fontWeight: 900, lineHeight: 1.0,
         color: COLORS.white,
-        margin: "0 0 8px",
+        margin: "0 0 12px",
         letterSpacing: "-0.02em",
       }}>
         Sierra Shell
       </h1>
-      <h2 style={{
-        fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
-        fontSize: "clamp(16px, 2.5vw, 22px)",
-        fontWeight: 400, color: "rgba(255,255,255,0.75)",
-        margin: "0 0 12px", letterSpacing: "0.01em",
-      }}>
-        AI Governance Advisor
-      </h2>
 
       {/* Contact links */}
       <div style={{ display: "flex", gap: 20, marginBottom: 48, flexWrap: "wrap", alignItems: "center" }}>
@@ -365,14 +356,7 @@ const OpportunitySection = () => (
             fontSize: 17, lineHeight: 1.8, color: COLORS.darkGray,
             margin: 0, fontWeight: 400,
           }}>
-            SAS's AI Governance Advisory service is already positioning SAS as that trusted partner. SAS customers face mounting AI governance requirements, including EU AI Act compliance, sector-specific regulations, and NIST AI RMF implementation, but lack the expertise to act on them: conducting readiness assessments to benchmark where customers stand against applicable frameworks, facilitating governance workshops that translate regulatory requirements into actionable internal policies, and delivering tailored implementation roadmaps that connect governance obligations directly to SAS product capabilities.
-          </p>
-          <p style={{
-            fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
-            fontSize: 17, lineHeight: 1.8, color: COLORS.darkGray,
-            margin: "24px 0 0", fontWeight: 400,
-          }}>
-            Done well, this drives retention through successful implementation support, potential wallet share expansion through billable advisory engagements, and accelerated adoption by demonstrating real governance value in context.
+            SAS customers seek to adopt and scale AI, yet face mounting governance requirements. As a trusted partner in Data and AI, SAS already provides a robust service: conducting readiness assessments to benchmark against applicable frameworks, facilitating governance workshops that translate regulatory requirements into actionable internal policies, and delivering tailored risk management guidance, some of which connects governance obligations directly to SAS product capabilities.
           </p>
         </FadeIn>
 
@@ -382,47 +366,38 @@ const OpportunitySection = () => (
             fontSize: 17, lineHeight: 1.8, color: COLORS.darkGray,
             margin: 0, fontWeight: 400,
           }}>
-            I bring a complementary set of skills that could expand what this service delivers. My three years designing Trustworthy AI products at SAS means customer-facing advisory work builds on established credibility and deep product knowledge, allowing me to connect governance recommendations directly to what SAS tools actually do. My UCL Master's research, conducted in partnership with BSI, specifically investigated the organizational hurdles and disincentives that prevent companies from implementing AI governance, which is exactly the friction our advisory service would help customers overcome.
+            <strong>I bring a complementary set of skills that could expand what this service delivers.</strong>
           </p>
           <p style={{
             fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
             fontSize: 17, lineHeight: 1.8, color: COLORS.darkGray,
             margin: "24px 0 0", fontWeight: 400,
           }}>
-            The customer research I've already conducted at SAS, including interviews, systematic synthesis, and pain point analysis, is the same methodology I'd apply in readiness assessments and workshop design. My academic writing experience translates directly to the white papers and thought leadership that establish SAS as the governance authority customers turn to first.
+            My four years designing Trustworthy AI products at SAS means customer-facing advisory work builds on established credibility and deep product knowledge, allowing me to connect governance recommendations directly to what SAS tools actually do.
+          </p>
+          <p style={{
+            fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
+            fontSize: 17, lineHeight: 1.8, color: COLORS.darkGray,
+            margin: "24px 0 0", fontWeight: 400,
+          }}>
+            My UCL Master's research, conducted in partnership with BSI, specifically investigated the organizational hurdles and disincentives that prevent companies from implementing AI governance mechanisms, which is exactly the friction our advisory service would help customers overcome.
+          </p>
+          <p style={{
+            fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
+            fontSize: 17, lineHeight: 1.8, color: COLORS.darkGray,
+            margin: "24px 0 0", fontWeight: 400,
+          }}>
+            The customer engagement I've already conducted at SAS extends naturally to readiness assessments and workshop design, facilitation, and synthesis.
+          </p>
+          <p style={{
+            fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
+            fontSize: 17, lineHeight: 1.8, color: COLORS.darkGray,
+            margin: "24px 0 0", fontWeight: 400,
+          }}>
+            My academic writing experience translates directly to the white papers and thought leadership that establish SAS as the governance authority customers turn to first.
           </p>
         </FadeIn>
       </div>
-
-      {/* Business impact stats */}
-      <FadeIn delay={0.3}>
-        <div style={{
-          display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24,
-          marginTop: 64,
-          padding: "40px",
-          background: COLORS.primaryLight,
-          borderRadius: 4,
-          borderLeft: `4px solid ${COLORS.primary}`,
-        }}>
-          {[
-            { metric: "Customer Retention", desc: "Through successful governance implementation support" },
-            { metric: "Revenue Expansion", desc: "Via billable advisory engagements and compliance services" },
-            { metric: "Product Adoption", desc: "By demonstrating real governance value in customer context" },
-          ].map((item, i) => (
-            <div key={i}>
-              <div style={{
-                fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
-                fontSize: 15, fontWeight: 800, color: COLORS.primary,
-                marginBottom: 8, letterSpacing: "0.01em",
-              }}>{item.metric}</div>
-              <div style={{
-                fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
-                fontSize: 14, color: COLORS.darkGray, lineHeight: 1.5,
-              }}>{item.desc}</div>
-            </div>
-          ))}
-        </div>
-      </FadeIn>
     </div>
   </section>
 );
@@ -561,7 +536,7 @@ const CredentialsSection = () => (
     <div style={{ maxWidth: 1200, margin: "0 auto" }}>
       <FadeIn>
         <SectionLabel>What I Bring</SectionLabel>
-        <SectionTitle>The bridge between design and governance.</SectionTitle>
+        <SectionTitle>Three Pillars of Experience</SectionTitle>
       </FadeIn>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
@@ -577,7 +552,7 @@ const CredentialsSection = () => (
             {
               title: "Research Associate, UCL/BSI Partnership",
               meta: "March–November 2022",
-              desc: "Led interviews with 29 experts from British and global standards bodies, private sector, and UK regulators. Conducted systematic horizon scanning for emerging AI governance needs.",
+              desc: "Led interviews with 29 experts from British and global standards bodies, private sector, and UK regulators. Created a workshop utilizing horizon scanning to forecast future AI governance needs.",
             },
             {
               title: "Published Research",
@@ -587,9 +562,11 @@ const CredentialsSection = () => (
               linkLabel: "Read Report →",
             },
             {
-              title: "Regulatory Expertise",
-              meta: "Multi-jurisdictional",
-              desc: "Studied EU AI Act, US National AI Strategy, NIST AI RMF, and risk-based regulatory approaches across jurisdictions.",
+              title: " ",
+              meta: "March 2022",
+              desc: "Used systematic, replicable research methods to define a taxonomy of Explainability strategies for decision systems that could be utilized by organizations.",
+              link: "https://docs.google.com/document/d/1lDqsW-NtLGMjrBYLFZrxxgqxvcTuEJip/edit?usp=sharing&ouid=105412725261749834300&rtpof=true&sd=true",
+              linkLabel: "Read Paper →",
             },
           ]}
         />
@@ -598,19 +575,19 @@ const CredentialsSection = () => (
           title="Product & Customer Research"
           items={[
             {
-              title: "SAS AI Governance Navigator",
+              title: "SAS AI Navigator",
               meta: "Co-Designer",
-              desc: "Led design of assessment and documentation, data governance, and policy creation — the company's primary AI Governance solution.",
+              desc: "Led design of assessment documentation, data governance, and policy creation features for the company's primary AI governance solution.",
             },
             {
               title: "NIST AI RMF-Based Trustworthy AI Workflow",
               meta: "Co-Designer",
-              desc: "Governance architecture explicitly based on the NIST AI Risk Management Framework. Deep operationalization of established standards, not isolated design work.",
+              desc: "Actionable, step-by-step governance framework explicitly based on the NIST AI Risk Management Framework. The workflow is provided in Workflow Manager and publicly accessible via GitHub, a perfect tool for many SAS customers.",
             },
             {
-              title: "Proprietary Model Card Patent",
+              title: "Model Card Patent",
               meta: "Inventor",
-              desc: "Model card framework operationalizing AI transparency and documentation requirements — governance innovation at product level.",
+              desc: "A digestible report card operationalizing model health and bias metrics, rendering AI adoption transparent and model ethics measurable.",
             },
             {
               title: "Customer Governance Research",
@@ -626,23 +603,23 @@ const CredentialsSection = () => (
             {
               title: "Peer-Reviewed Publication",
               meta: "Visible Language · May 2025",
-              desc: "\"The Human Touch(point): Recommendations for Thoughtful AI Feature Design.\" Argues AI features should solve specific user problems, not novelty — strategic friction as beneficial design element.",
+              desc: "\"The Human Touch(point): Recommendations for Thoughtful AI Feature Design.\" Argues friction is a beneficial design element when creating AI tools and features.",
               link: "https://www.visible-language.org/journal/issue-59-2-dfi-the-human-touchpoint-recommendations-for-thoughtful-ai-feature-design/",
               linkLabel: "Read Article →",
             },
             {
               title: "Guest Lecturer, NC State University",
-              meta: "Master's-level course",
-              desc: "Taught Trustworthy AI Design and Implementation, focusing on maintaining human expertise and agency when working with AI tools.",
+              meta: "Master's-level students",
+              desc: "Gave a lecture to graduate students of design, focusing on maintaining human expertise and agency when working with and implementing AI tools.",
             },
             {
               title: "Ethical Design Program Founder",
               meta: "SAS · 2021",
-              desc: "Initiated SAS's Ethical Design effort. Facilitated workshops with 18 participants generating 33 actionable improvements.",
+              desc: "Initiated SAS's Ethical Design effort. Facilitated workshops with 18 participants generating 60+ actionable improvements.",
             },
             {
-              title: "Industry Conference Presentations",
-              meta: "SAS Global Forum · IEEE InfoVis",
+              title: "Speaking Engagements and Conference Presentations",
+              meta: "SAS User Groups · IEEE InfoVis",
               desc: "Multiple presentations demonstrating ability to communicate technical concepts to practitioner and research audiences internationally.",
             },
           ]}
@@ -662,7 +639,7 @@ const CredentialsSection = () => (
         <ProjectCard
           delay={0.1}
           image={navigatorImg}
-          title="SAS AI Governance Navigator"
+          title="SAS AI Navigator"
           meta="Co-Designer · Launching 2026"
           summary="A unified, holistic AI governance solution capable of aggregating, orchestrating, and monitoring AI systems, models, and agents. Designed for the executive, but useful enough for the data scientist — aligning AI with policies and helping organizations navigate their AI journeys confidently."
         />
@@ -849,76 +826,7 @@ const ValueSection = () => {
   );
 };
 
-const WhyMeSection = () => {
-  const reasons = [
-    {
-      title: "Established Customer Relationships",
-      desc: "Presented at User Groups internationally, conducted on-site research, and supported 4.5M+ users. SAS customers know me and have seen my work quality. This isn't starting from zero — I bring existing credibility that typically takes years to build.",
-      icon: "🤝",
-    },
-    {
-      title: "Product Depth Without Product Bias",
-      desc: "I helped build SAS Trustworthy AI tools — I know exactly how they work, their strengths, their limitations. My governance training ensures I can deliver tool-agnostic advice that builds customer trust rather than pushing products.",
-      icon: "⚖️",
-    },
-    {
-      title: "Implementation-Focused Mindset",
-      desc: "My research explicitly focused on why governance fails in practice: lack of common language around AI risks, fragmented regulatory landscape, absence of cross-functional skillsets. This is the exact gap customers need help bridging.",
-      icon: "🎯",
-    },
-    {
-      title: "Timing Alignment",
-      desc: "Regulations are shifting from proposed to enforced. Customers are moving from awareness to action. My 2022 master's means current knowledge, my customer research reveals their pain points, and 10 years at SAS eliminates ramp-up time.",
-      icon: "📈",
-    },
-  ];
 
-  return (
-    <section id="why" style={{ padding: "100px 48px", background: COLORS.nearBlack }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <FadeIn>
-          <SectionLabel>Why Me, Why Now</SectionLabel>
-          <h2 style={{
-            fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
-            fontSize: "clamp(28px, 4vw, 40px)",
-            fontWeight: 900, color: COLORS.white,
-            margin: "0 0 48px", lineHeight: 1.15,
-            letterSpacing: "-0.01em",
-          }}>Four reasons. Zero coincidence.</h2>
-        </FadeIn>
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24 }}>
-          {reasons.map((reason, i) => (
-            <FadeIn key={i} delay={i * 0.1}>
-              <div style={{
-                padding: "36px",
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                borderRadius: 4,
-                transition: "background 0.2s, border 0.2s",
-              }}
-                onMouseEnter={e => { e.currentTarget.style.background = "rgba(6,100,208,0.12)"; e.currentTarget.style.borderColor = `rgba(6,100,208,0.3)`; }}
-                onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.04)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
-              >
-                <div style={{ fontSize: 28, marginBottom: 16 }}>{reason.icon}</div>
-                <h3 style={{
-                  fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
-                  fontSize: 18, fontWeight: 800, color: COLORS.white,
-                  margin: "0 0 12px",
-                }}>{reason.title}</h3>
-                <p style={{
-                  fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
-                  fontSize: 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.7,
-                  margin: 0,
-                }}>{reason.desc}</p>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
 
 const ClosingSection = () => (
   <section style={{ padding: "100px 48px", background: COLORS.primary }}>
@@ -976,11 +884,11 @@ const Footer = () => (
       <span style={{
         fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
         fontSize: 12, color: "rgba(255,255,255,0.3)",
-      }}>Sierra Shell · AI Governance Advisor · SAS Institute</span>
+      }}>Sierra Shell · Senior AI Governance Advisor · SAS Institute</span>
       <span style={{
         fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
         fontSize: 12, color: "rgba(255,255,255,0.3)",
-      }}>Internal Transition Brief · 2025</span>
+      }}>Application · 2025</span>
     </div>
   </footer>
 );
@@ -989,7 +897,7 @@ export default function App() {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    const sections = ["opportunity", "credentials", "value", "why"];
+    const sections = ["opportunity", "credentials", "value"];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -1023,7 +931,6 @@ export default function App() {
       <OpportunitySection />
       <CredentialsSection />
       <ValueSection />
-      <WhyMeSection />
       <ClosingSection />
       <Footer />
     </div>
