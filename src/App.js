@@ -541,7 +541,7 @@ const CredentialsSection = () => (
     <div style={{ maxWidth: 1200, margin: "0 auto" }}>
       <FadeIn>
         <SectionLabel>What I Bring</SectionLabel>
-        <SectionTitle>Three Pillars of Experience</SectionTitle>
+        <SectionTitle>Three pillars of experience.</SectionTitle>
       </FadeIn>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
