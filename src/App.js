@@ -69,7 +69,7 @@ const NavBar = ({ activeSection }) => {
   };
 
   return (
-    <nav style={{
+    <nav className="nav-pad" style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
       background: scrolled ? "rgba(255,255,255,0.97)" : "transparent",
       borderBottom: scrolled ? `1px solid ${COLORS.borderGray}` : "none",
@@ -161,9 +161,8 @@ const FlipCard = ({ front, back, delay }) => {
     <div
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
+      className="flip-card-outer"
       style={{
-        perspective: 1000,
-        height: 400,
         cursor: "default",
         animationDelay: `${delay}s`,
       }}
@@ -207,6 +206,7 @@ const FlipCard = ({ front, back, delay }) => {
           display: "flex", alignItems: "center", justifyContent: "center",
           padding: "28px 32px",
           boxShadow: "0 4px 20px rgba(6,100,208,0.25)",
+          overflow: "auto",
         }}>
           <p style={{
             fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
@@ -222,7 +222,7 @@ const FlipCard = ({ front, back, delay }) => {
 };
 
 const Hero = () => (
-  <section style={{
+  <section className="hero-pad" style={{
     background: `linear-gradient(135deg, ${COLORS.primaryDark} 0%, ${COLORS.primary} 60%, #1a7fd4 100%)`,
     display: "flex", flexDirection: "column", justifyContent: "center",
     padding: "100px 48px 72px",
@@ -321,11 +321,7 @@ const Hero = () => (
       </div>
 
       {/* Flip cards grid */}
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(4, 1fr)",
-        gap: 20,
-      }}>
+      <div className="flip-cards-grid">
         {FLIP_CARDS.map((card, i) => (
           <FlipCard key={i} front={card.front} back={card.back} delay={i * 0.08} />
         ))}
@@ -368,7 +364,7 @@ const SectionTitle = ({ children }) => (
 );
 
 const OpportunitySection = () => (
-  <section id="opportunity" style={{
+  <section id="opportunity" className="section-pad" style={{
     padding: "100px 48px",
     background: COLORS.white,
   }}>
@@ -563,7 +559,7 @@ const ProjectCard = ({ image, title, meta, summary, link, delay }) => (
 );
 
 const CredentialsSection = () => (
-  <section id="credentials" style={{
+  <section id="credentials" className="section-pad" style={{
     padding: "100px 48px",
     background: COLORS.lightGray,
   }}>
@@ -573,7 +569,7 @@ const CredentialsSection = () => (
         <SectionTitle>Three pillars of experience.</SectionTitle>
       </FadeIn>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+      <div className="three-col-grid">
         <CredentialCard
           delay={0.1}
           title="Governance Foundation"
@@ -669,7 +665,7 @@ const CredentialsSection = () => (
           margin: "56px 0 24px",
         }}>Featured Projects</h3>
       </FadeIn>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, alignItems: "stretch" }}>
+      <div className="three-col-grid" style={{ alignItems: "stretch" }}>
         <ProjectCard
           delay={0.1}
           image={navigatorImg}
@@ -791,16 +787,8 @@ const ServiceCard = ({ item, index }) => {
         </div>
 
         {/* Expanded drawer */}
-        <div style={{
-          maxHeight: expanded ? 400 : 0,
-          overflow: "hidden",
-          transition: "max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-        }}>
-          <div style={{
-            display: "grid", gridTemplateColumns: "1fr 1fr",
-            gap: 0,
-            borderTop: `1px solid ${COLORS.borderGray}`,
-          }}>
+        <div className={`service-drawer${expanded ? " open" : ""}`}>
+          <div className="service-drawer-inner">
             <div style={{ padding: "24px 32px", borderRight: `1px solid ${COLORS.borderGray}` }}>
               <div style={{
                 fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
@@ -812,7 +800,7 @@ const ServiceCard = ({ item, index }) => {
                 fontSize: 13, color: COLORS.darkGray, lineHeight: 1.7, margin: 0,
               }}>{item.customerImpact}</p>
             </div>
-            <div style={{ padding: "24px 32px", background: COLORS.primaryLight }}>
+            <div className="service-drawer-right" style={{ padding: "24px 32px", background: COLORS.primaryLight }}>
               <div style={{
                 fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
                 fontSize: 10, fontWeight: 700, letterSpacing: "0.1em",
@@ -831,7 +819,7 @@ const ServiceCard = ({ item, index }) => {
 };
 
 const ValueSection = () => (
-  <section id="value" style={{ padding: "100px 48px", background: COLORS.lightGray }}>
+  <section id="value" className="section-pad" style={{ padding: "100px 48px", background: COLORS.lightGray }}>
     <div style={{ maxWidth: 1200, margin: "0 auto" }}>
       <FadeIn>
         <SectionLabel>How I'll Deliver Value</SectionLabel>
@@ -950,6 +938,80 @@ export default function App() {
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: ${COLORS.primary}; border-radius: 3px; }
+
+        /* Flip cards grid: 4 → 2 → 1 */
+        .flip-cards-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+        }
+        @media (max-width: 900px) {
+          .flip-cards-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 500px) {
+          .flip-cards-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        /* Flip cards: auto height so back text never clips */
+        .flip-card-outer {
+          perspective: 1000px;
+          height: 260px;
+        }
+        @media (max-width: 900px) {
+          .flip-card-outer {
+            height: 220px;
+          }
+        }
+
+        /* Three pillars + Featured Projects: 3 → 1 centered */
+        .three-col-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 24px;
+        }
+        @media (max-width: 900px) {
+          .three-col-grid {
+            grid-template-columns: 1fr;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+
+        /* Section padding on mobile */
+        @media (max-width: 600px) {
+          .section-pad { padding: 64px 20px !important; }
+          .hero-pad { padding: 80px 20px 48px !important; }
+          .nav-pad { padding: 0 20px !important; }
+        }
+
+        /* Service cards: expand to fit all text */
+        .service-drawer {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .service-drawer.open {
+          max-height: none;
+        }
+        .service-drawer-inner {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0;
+          border-top: 1px solid ${COLORS.borderGray};
+        }
+        @media (max-width: 700px) {
+          .service-drawer-inner {
+            grid-template-columns: 1fr;
+          }
+          .service-drawer-right {
+            border-top: 1px solid ${COLORS.borderGray};
+          }
+        }
       `}</style>
       <NavBar activeSection={activeSection} />
       <Hero />
