@@ -60,8 +60,8 @@ const NavBar = ({ activeSection }) => {
 
   const navItems = [
     { id: "opportunity", label: "The Opportunity" },
-    { id: "credentials", label: "Experience" },
-    { id: "value", label: "Value Delivered" },
+    { id: "credentials", label: "My Experience" },
+    { id: "value", label: "New Services Plan" },
   ];
 
   const scrollTo = (id) => {
@@ -310,21 +310,14 @@ const Hero = () => (
       {/* Divider */}
       <div style={{ width: 48, height: 2, background: "rgba(255,255,255,0.25)", borderRadius: 1, marginBottom: 40 }} />
 
-      {/* Why Me heading */}
+      {/* Section label - matches style of other section labels */}
       <div style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
         <div style={{ width: 24, height: 2, background: "rgba(255,255,255,0.5)", borderRadius: 1 }} />
         <span style={{
           fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
           fontSize: 11, fontWeight: 700, letterSpacing: "0.12em",
           color: "rgba(255,255,255,0.7)", textTransform: "uppercase",
-        }}>Why Me?</span>
-      </div>
-      <div style={{ marginBottom: 20 }}>
-        <span style={{
-          fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
-          fontSize: 11, fontWeight: 600, letterSpacing: "0.1em",
-          color: "rgba(255,255,255,0.45)", textTransform: "uppercase",
-        }}>Hover to learn more</span>
+        }}>What makes me a great candidate?</span>
       </div>
 
       {/* Flip cards grid */}
@@ -336,6 +329,15 @@ const Hero = () => (
         {FLIP_CARDS.map((card, i) => (
           <FlipCard key={i} front={card.front} back={card.back} delay={i * 0.08} />
         ))}
+      </div>
+
+      {/* Flip cards prompt */}
+      <div style={{ marginTop: 16 }}>
+        <span style={{
+          fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
+          fontSize: 11, fontWeight: 600, letterSpacing: "0.1em",
+          color: "rgba(255,255,255,0.45)", textTransform: "uppercase",
+        }}>Hover to learn more</span>
       </div>
 
     </div>
