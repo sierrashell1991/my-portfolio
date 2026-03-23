@@ -60,7 +60,7 @@ const NavBar = ({ activeSection }) => {
 
   const navItems = [
     { id: "opportunity", label: "The Opportunity" },
-    { id: "credentials", label: "Credentials" },
+    { id: "credentials", label: "Experience" },
     { id: "value", label: "Value Delivered" },
   ];
 
@@ -473,6 +473,9 @@ const ProjectCard = ({ image, title, meta, summary, link, delay }) => (
       border: `1px solid ${COLORS.borderGray}`,
       borderRadius: 4,
       overflow: "hidden",
+      height: "100%",
+      display: "flex",
+      flexDirection: "column",
       transition: "box-shadow 0.2s, transform 0.2s",
     }}
       onMouseEnter={e => { e.currentTarget.style.boxShadow = "0 8px 32px rgba(6,100,208,0.1)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
@@ -483,6 +486,7 @@ const ProjectCard = ({ image, title, meta, summary, link, delay }) => (
         width: "100%", height: 180, overflow: "hidden",
         background: COLORS.lightGray,
         borderBottom: `1px solid ${COLORS.borderGray}`,
+        flexShrink: 0,
       }}>
         <img
           src={image}
@@ -491,7 +495,7 @@ const ProjectCard = ({ image, title, meta, summary, link, delay }) => (
         />
       </div>
       {/* Content */}
-      <div style={{ padding: "24px" }}>
+      <div style={{ padding: "24px", display: "flex", flexDirection: "column", flex: 1 }}>
         <div style={{
           fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
           fontSize: 12, color: COLORS.accent, fontWeight: 600,
@@ -506,6 +510,7 @@ const ProjectCard = ({ image, title, meta, summary, link, delay }) => (
           fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
           fontSize: 13, color: COLORS.midGray, lineHeight: 1.65,
           margin: "0 0 16px",
+          flex: 1,
         }}>{summary}</p>
         {link && (
           <a href={link} target="_blank" rel="noreferrer" style={{
@@ -550,7 +555,7 @@ const CredentialsSection = () => (
               desc: "MPA in Science, Technology, Engineering, and Public Policy with focus on AI governance, risk management, and international regulation.",
             },
             {
-              title: "Research Associate, UCL/BSI Partnership",
+              title: "BSI Research Partnership",
               meta: "March–November 2022",
               desc: "Led interviews with 29 experts from British and global standards bodies, private sector, and UK regulators. Created a workshop utilizing horizon scanning to forecast future AI governance needs.",
             },
@@ -562,7 +567,7 @@ const CredentialsSection = () => (
               linkLabel: "Read Report →",
             },
             {
-              title: " ",
+              title: "Explainability Strategies for Decision-making",
               meta: "March 2022",
               desc: "Used systematic, replicable research methods to define a taxonomy of Explainability strategies for decision systems that could be utilized by organizations.",
               link: "https://docs.google.com/document/d/1lDqsW-NtLGMjrBYLFZrxxgqxvcTuEJip/edit?usp=sharing&ouid=105412725261749834300&rtpof=true&sd=true",
@@ -603,12 +608,12 @@ const CredentialsSection = () => (
             {
               title: "Peer-Reviewed Publication",
               meta: "Visible Language · May 2025",
-              desc: "\"The Human Touch(point): Recommendations for Thoughtful AI Feature Design.\" Argues friction is a beneficial design element when creating AI tools and features.",
+              desc: "\"The Human Touch(point): Recommendations for Thoughtful AI Feature Design\" argues friction can be a beneficial design element when creating AI tools and features.",
               link: "https://www.visible-language.org/journal/issue-59-2-dfi-the-human-touchpoint-recommendations-for-thoughtful-ai-feature-design/",
               linkLabel: "Read Article →",
             },
             {
-              title: "Guest Lecturer, NC State University",
+              title: "Guest Lecture, NC State University",
               meta: "Master's-level students",
               desc: "Gave a lecture to graduate students of design, focusing on maintaining human expertise and agency when working with and implementing AI tools.",
             },
@@ -618,7 +623,7 @@ const CredentialsSection = () => (
               desc: "Initiated SAS's Ethical Design effort. Facilitated workshops with 18 participants generating 60+ actionable improvements.",
             },
             {
-              title: "Speaking Engagements and Conference Presentations",
+              title: "Public Speaker and Conference Presenter",
               meta: "SAS User Groups · IEEE InfoVis",
               desc: "Multiple presentations demonstrating ability to communicate technical concepts to practitioner and research audiences internationally.",
             },
@@ -635,7 +640,7 @@ const CredentialsSection = () => (
           margin: "56px 0 24px",
         }}>Featured Projects</h3>
       </FadeIn>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, alignItems: "stretch" }}>
         <ProjectCard
           delay={0.1}
           image={navigatorImg}
@@ -663,168 +668,161 @@ const CredentialsSection = () => (
   </section>
 );
 
-const ValueSection = () => {
-  const [activeTab, setActiveTab] = useState(0);
-  const tabs = [
-    {
-      label: "Customer Advisory",
-      sublabel: "Revenue & Retention",
-      color: COLORS.primary,
-      services: [
-        {
-          title: "Governance Readiness Assessments",
-          tag: "Billable Service",
-          desc: "Structured assessments for customers facing regulatory deadlines. Identify gaps, create implementation roadmaps, and naturally position SAS products as solutions.",
-        },
-        {
-          title: "Implementation Workshops",
-          tag: "Customer Retention",
-          desc: "Hands-on sessions mapping customer governance needs to SAS capabilities — demonstrating value beyond the sale, ensuring successful adoption, reducing churn.",
-        },
-        {
-          title: "Compliance Quick-Starts",
-          tag: "Product Acceleration",
-          desc: "Rapid-start programs showing customers how to achieve specific compliance milestones using SAS tools — compressing time-to-value and creating urgency for product adoption.",
-        },
-        {
-          title: "Executive Governance Briefings",
-          tag: "Expansion Sales",
-          desc: "Board-level presentations on AI risk landscape — positioning SAS as strategic advisor and opening enterprise-wide governance conversations.",
-        },
-      ],
-    },
-    {
-      label: "Thought Leadership",
-      sublabel: "Market Positioning",
-      color: COLORS.accent,
-      services: [
-        {
-          title: "White Papers & Research Reports",
-          tag: "Lead Generation",
-          desc: "Authoritative white papers on governance implementation, regulatory landscape analysis, and industry-specific best practices — gated content generating qualified leads.",
-        },
-        {
-          title: "Industry Conference Speaking",
-          tag: "Brand Credibility",
-          desc: "Present at AI governance conferences, regulatory forums, and industry events — building credibility that generates inbound customer inquiries.",
-        },
-        {
-          title: "Webinar Series",
-          tag: "Prospect Nurturing",
-          desc: "Monthly governance webinars on emerging regulations and implementation frameworks — building prospect audience while nurturing customer relationships.",
-        },
-        {
-          title: "Standards Body Representation",
-          tag: "Early Insight",
-          desc: "Continue BSI/ISO involvement representing SAS — early regulatory insight and positioning as contributor, not observer.",
-        },
-      ],
-    },
-    {
-      label: "Product Integration",
-      sublabel: "Adoption Acceleration",
-      color: "#047857",
-      services: [
-        {
-          title: "Framework Mapping Services",
-          tag: "Compliance Value",
-          desc: "Show customers exactly how SAS Trustworthy AI products map to NIST AI RMF, ISO 42001, and EU AI Act — demonstrating concrete compliance value.",
-        },
-        {
-          title: "Gap Analysis & Roadmapping",
-          tag: "Trust Building",
-          desc: "Identify where customers need complementary solutions beyond SAS products — building trust through authentic guidance while positioning SAS tools where they excel.",
-        },
-        {
-          title: "Product Feedback Loop",
-          tag: "Roadmap Influence",
-          desc: "Channel customer governance requirements to product teams — informing roadmap priorities with real market needs.",
-        },
-        {
-          title: "Internal Governance Excellence",
-          tag: "Authenticity",
-          desc: "Support SAS's own AI governance program, ensuring we practice what we preach and can speak authentically about implementation challenges.",
-        },
-      ],
-    },
-  ];
+const SERVICE_ITEMS = [
+  {
+    icon: "🏛️",
+    title: "Industry-Specific AI Governance Playbooks",
+    summary: "Generic governance frameworks often fail in practice — they don't account for the regulatory nuance of financial services, life sciences, government, or insurance. I would create tailored playbooks that harmonize sector regulations (SR 11-7, HIPAA, EU AI Act) with AI governance frameworks, giving SAS customers a head start that generic consulting firms simply can't match.",
+    customerImpact: "Sector-specific playbooks dramatically reduce the time customers spend adapting guidance to their context. A financial services firm doesn't want a generic NIST mapping — they want one that speaks to SR 11-7 and model risk management. These playbooks accelerate implementation by meeting customers where they already operate.",
+    revenueAngle: "Playbooks anchor premium paid workshops and differentiate SAS from generic consulting firms that lack deep domain expertise. Each playbook becomes a repeatable commercial asset that can be licensed, updated, and sold across an entire vertical.",
+    tag: "Premium Workshop Anchor",
+  },
+  {
+    icon: "📚",
+    title: "Responsible AI Policy Library & Template Repository",
+    summary: "Most organizations lack the internal expertise to draft AI governance documentation from scratch. I would build a curated, living library of policy templates, acceptable use guidelines, model cards, and risk assessment frameworks — kept current as regulations evolve across EU AI Act, NIST AI RMF, ISO 42001, and the growing patchwork of state legislation.",
+    customerImpact: "A credible, SAS-branded template library dramatically lowers the barrier to getting governance documentation in place — especially valuable for mid-market customers who need to move fast but lack dedicated governance staff. Policy packs for AI Navigator would live within this library, but contents would not be limited to AIN integration.",
+    revenueAngle: "Completing and updating templates per-customer, or offering regulatory update monitoring, could be structured as a subscription add-on — creating predictable recurring revenue and deepening the customer relationship over time.",
+    tag: "Subscription Opportunity",
+  },
+  {
+    icon: "🤝",
+    title: "AI Governance Champions Program",
+    summary: "AI governance practitioners are often isolated within their organizations — responsible for a complex, evolving mandate with few peers to turn to. I would launch a cohort-based peer community where customer governance leads share challenges, co-develop solutions, and build confidence together, guided and facilitated by the SAS AI governance team.",
+    customerImpact: "A peer community creates accountability, surfaces best practices faster, and builds the confidence customers need to advance their programs. Think of it as a customer advisory board with community benefits — members become more invested in SAS as a governance partner and gain access to expertise beyond our own team.",
+    revenueAngle: "Community membership could be tiered: basic access complimentary, premium membership (including direct advisor access, benchmarking data, and research) offered as a paid subscription. The community also becomes a high-signal channel for product feedback and market intelligence.",
+    tag: "Tiered Subscription Model",
+  },
+  {
+    icon: "🔍",
+    title: "Third-Party AI Vendor & Tool Evaluation",
+    summary: "As customers build AI ecosystems using multiple vendors and models — including third-party LLMs — they need a consistent, credible way to evaluate risk. I would help customers assess the governance posture of AI tools and vendors they're adopting, evaluating transparency, bias controls, auditability, and contractual accountability, delivered as a structured vendor scorecard.",
+    customerImpact: "SAS fills a critical gap as a trusted, independent voice in vendor evaluation — a role that generic consulting firms lack the technical depth to play credibly. Customers gain a reusable framework that builds internal capability while reducing third-party risk.",
+    revenueAngle: "This is a high-value paid advisory engagement requiring bespoke analysis. It also creates a natural opportunity to compare vendor capabilities against SAS's own offerings — a soft but effective positioning play that keeps SAS front of mind during purchasing decisions.",
+    tag: "High-Value Advisory Engagement",
+  },
+];
 
+const ServiceCard = ({ item, index }) => {
+  const [expanded, setExpanded] = useState(false);
   return (
-    <section id="value" style={{ padding: "100px 48px", background: COLORS.white }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <FadeIn>
-          <SectionLabel>How I'll Deliver Value</SectionLabel>
-          <SectionTitle>Revenue-driving activities across three pillars.</SectionTitle>
-        </FadeIn>
-
-        {/* Tab buttons */}
-        <div style={{ display: "flex", gap: 0, marginBottom: 40, borderBottom: `1px solid ${COLORS.borderGray}` }}>
-          {tabs.map((tab, i) => (
-            <button
-              key={i}
-              onClick={() => setActiveTab(i)}
-              style={{
-                background: "none", border: "none", cursor: "pointer",
-                padding: "16px 32px",
+    <FadeIn delay={index * 0.08}>
+      <div style={{
+        background: COLORS.white,
+        border: `1px solid ${COLORS.borderGray}`,
+        borderLeft: `4px solid ${COLORS.primary}`,
+        borderRadius: 4,
+        overflow: "hidden",
+        transition: "box-shadow 0.2s",
+        boxShadow: expanded ? "0 8px 32px rgba(6,100,208,0.10)" : "none",
+      }}>
+        {/* Card header — always visible */}
+        <div style={{ padding: "28px 32px 24px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              <span style={{ fontSize: 22 }}>{item.icon}</span>
+              <div style={{
                 fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
-                fontWeight: activeTab === i ? 800 : 500,
-                fontSize: 14,
-                color: activeTab === i ? tab.color : COLORS.midGray,
-                borderBottom: activeTab === i ? `3px solid ${tab.color}` : "3px solid transparent",
-                marginBottom: -1,
-                transition: "all 0.2s",
-                textAlign: "left",
-              }}
-            >
-              <div>{tab.label}</div>
-              <div style={{ fontSize: 11, letterSpacing: "0.06em", textTransform: "uppercase", opacity: 0.7, marginTop: 2 }}>
-                {tab.sublabel}
-              </div>
-            </button>
-          ))}
+                fontSize: 16, fontWeight: 800, color: COLORS.nearBlack,
+                letterSpacing: "-0.01em",
+              }}>{item.title}</div>
+            </div>
+            <span style={{
+              fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
+              fontSize: 10, fontWeight: 700, letterSpacing: "0.08em",
+              color: COLORS.primary,
+              background: COLORS.primaryLight,
+              padding: "3px 10px", borderRadius: 2,
+              textTransform: "uppercase", whiteSpace: "nowrap",
+              marginLeft: 16, flexShrink: 0,
+            }}>{item.tag}</span>
+          </div>
+          <p style={{
+            fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
+            fontSize: 14, color: COLORS.darkGray, lineHeight: 1.7,
+            margin: "0 0 16px",
+          }}>{item.summary}</p>
+
+          {/* Toggle button */}
+          <button
+            onClick={() => setExpanded(!expanded)}
+            style={{
+              background: "none", border: "none", cursor: "pointer", padding: 0,
+              display: "inline-flex", alignItems: "center", gap: 6,
+              fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
+              fontSize: 12, fontWeight: 700, color: COLORS.primary,
+              letterSpacing: "0.04em",
+              transition: "opacity 0.2s",
+            }}
+            onMouseEnter={e => e.currentTarget.style.opacity = "0.7"}
+            onMouseLeave={e => e.currentTarget.style.opacity = "1"}
+          >
+            {expanded ? "Show less ↑" : "See customer impact & revenue angle ↓"}
+          </button>
         </div>
 
-        {/* Tab content */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24 }}>
-          {tabs[activeTab].services.map((service, i) => (
-            <div
-              key={i}
-              style={{
-                padding: "28px",
-                background: COLORS.white,
-                border: `1px solid ${COLORS.borderGray}`,
-                borderRadius: 4,
-                borderTop: `3px solid ${tabs[activeTab].color}`,
-                animation: "fadeUp 0.4s ease",
-              }}
-            >
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
-                <div style={{
-                  fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
-                  fontSize: 15, fontWeight: 700, color: COLORS.nearBlack,
-                  flex: 1, paddingRight: 16,
-                }}>{service.title}</div>
-                <span style={{
-                  fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
-                  fontSize: 10, fontWeight: 700, letterSpacing: "0.08em",
-                  color: tabs[activeTab].color,
-                  background: `${tabs[activeTab].color}15`,
-                  padding: "3px 8px", borderRadius: 2,
-                  textTransform: "uppercase", whiteSpace: "nowrap",
-                }}>{service.tag}</span>
-              </div>
+        {/* Expanded drawer */}
+        <div style={{
+          maxHeight: expanded ? 400 : 0,
+          overflow: "hidden",
+          transition: "max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+        }}>
+          <div style={{
+            display: "grid", gridTemplateColumns: "1fr 1fr",
+            gap: 0,
+            borderTop: `1px solid ${COLORS.borderGray}`,
+          }}>
+            <div style={{ padding: "24px 32px", borderRight: `1px solid ${COLORS.borderGray}` }}>
+              <div style={{
+                fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
+                fontSize: 10, fontWeight: 700, letterSpacing: "0.1em",
+                color: COLORS.accent, textTransform: "uppercase", marginBottom: 10,
+              }}>Customer Impact</div>
               <p style={{
                 fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
-                fontSize: 14, color: COLORS.midGray, lineHeight: 1.65,
-                margin: 0,
-              }}>{service.desc}</p>
+                fontSize: 13, color: COLORS.darkGray, lineHeight: 1.7, margin: 0,
+              }}>{item.customerImpact}</p>
             </div>
-          ))}
+            <div style={{ padding: "24px 32px", background: COLORS.primaryLight }}>
+              <div style={{
+                fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
+                fontSize: 10, fontWeight: 700, letterSpacing: "0.1em",
+                color: COLORS.primary, textTransform: "uppercase", marginBottom: 10,
+              }}>Revenue Angle</div>
+              <p style={{
+                fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
+                fontSize: 13, color: COLORS.darkGray, lineHeight: 1.7, margin: 0,
+              }}>{item.revenueAngle}</p>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </FadeIn>
   );
 };
+
+const ValueSection = () => (
+  <section id="value" style={{ padding: "100px 48px", background: COLORS.lightGray }}>
+    <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+      <FadeIn>
+        <SectionLabel>How I'll Deliver Value</SectionLabel>
+        <SectionTitle>Expanding the AI Governance service offering.</SectionTitle>
+        <p style={{
+          fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
+          fontSize: 17, lineHeight: 1.8, color: COLORS.darkGray,
+          margin: "-24px 0 48px", maxWidth: 760,
+        }}>
+          Each initiative below begins as a value-added service and has a clear path to a billable engagement. Select any card to see the customer impact and revenue angle.
+        </p>
+      </FadeIn>
+      <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+        {SERVICE_ITEMS.map((item, i) => (
+          <ServiceCard key={i} item={item} index={i} />
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 
 
