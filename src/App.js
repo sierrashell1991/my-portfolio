@@ -90,7 +90,7 @@ const NavBar = ({ activeSection }) => {
         }}>
           SIERRA SHELL
         </div>
-        <div style={{ display: "flex", gap: 32 }}>
+        <div style={{ display: "flex", gap: 32, alignItems: "center" }}>
           {navItems.map(item => (
             <button
               key={item.id}
@@ -111,6 +111,25 @@ const NavBar = ({ activeSection }) => {
               {item.label.toUpperCase()}
             </button>
           ))}
+          <a
+            href="/resume.pdf"
+            download
+            style={{
+              fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
+              fontSize: 13, fontWeight: 700, letterSpacing: "0.04em",
+              textDecoration: "none",
+              padding: "7px 16px",
+              borderRadius: 4,
+              background: scrolled ? COLORS.primary : "rgba(255,255,255,0.15)",
+              color: COLORS.white,
+              border: scrolled ? "none" : "1px solid rgba(255,255,255,0.4)",
+              transition: "all 0.2s ease",
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = scrolled ? COLORS.primaryDark : "rgba(255,255,255,0.25)"; }}
+            onMouseLeave={e => { e.currentTarget.style.background = scrolled ? COLORS.primary : "rgba(255,255,255,0.15)"; }}
+          >
+            DOWNLOAD RESUME
+          </a>
         </div>
       </div>
     </nav>
@@ -291,7 +310,15 @@ const Hero = () => (
       {/* Divider */}
       <div style={{ width: 48, height: 2, background: "rgba(255,255,255,0.25)", borderRadius: 1, marginBottom: 40 }} />
 
-      {/* Flip cards prompt */}
+      {/* Why Me heading */}
+      <div style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
+        <div style={{ width: 24, height: 2, background: "rgba(255,255,255,0.5)", borderRadius: 1 }} />
+        <span style={{
+          fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
+          fontSize: 11, fontWeight: 700, letterSpacing: "0.12em",
+          color: "rgba(255,255,255,0.7)", textTransform: "uppercase",
+        }}>Why Me?</span>
+      </div>
       <div style={{ marginBottom: 20 }}>
         <span style={{
           fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
@@ -672,7 +699,7 @@ const SERVICE_ITEMS = [
   {
     icon: "🏛️",
     title: "Industry-Specific AI Governance Playbooks",
-    summary: "Generic governance frameworks often fail in practice — they don't account for the regulatory nuance of financial services, life sciences, government, or insurance. I would create tailored playbooks that harmonize sector regulations (SR 11-7, HIPAA, EU AI Act) with AI governance frameworks, giving SAS customers a head start that generic consulting firms simply can't match.",
+    summary: "Generic governance frameworks often fail in practice — they don't account for the need to harmonize with unique regulatory requirements in financial services, life sciences, government, or insurance. Our team could create tailored playbooks that harmonize sector regulations (SR 11-7, HIPAA, EU AI Act) with AI governance frameworks, giving SAS customers a head start that generic consulting firms simply can't match.",
     customerImpact: "Sector-specific playbooks dramatically reduce the time customers spend adapting guidance to their context. A financial services firm doesn't want a generic NIST mapping — they want one that speaks to SR 11-7 and model risk management. These playbooks accelerate implementation by meeting customers where they already operate.",
     revenueAngle: "Playbooks anchor premium paid workshops and differentiate SAS from generic consulting firms that lack deep domain expertise. Each playbook becomes a repeatable commercial asset that can be licensed, updated, and sold across an entire vertical.",
     tag: "Premium Workshop Anchor",
@@ -680,7 +707,7 @@ const SERVICE_ITEMS = [
   {
     icon: "📚",
     title: "Responsible AI Policy Library & Template Repository",
-    summary: "Most organizations lack the internal expertise to draft AI governance documentation from scratch. I would build a curated, living library of policy templates, acceptable use guidelines, model cards, and risk assessment frameworks — kept current as regulations evolve across EU AI Act, NIST AI RMF, ISO 42001, and the growing patchwork of state legislation.",
+    summary: "Most organizations lack the internal expertise to draft AI governance documentation from scratch. I would build a curated, living library of policy templates, acceptable use guidelines, model cards, and risk assessment frameworks, going beyond the context of AI Navigator and policy packs — kept current as regulations evolve across EU AI Act, NIST AI RMF, ISO 42001, and the growing patchwork of state legislation.",
     customerImpact: "A credible, SAS-branded template library dramatically lowers the barrier to getting governance documentation in place — especially valuable for mid-market customers who need to move fast but lack dedicated governance staff. Policy packs for AI Navigator would live within this library, but contents would not be limited to AIN integration.",
     revenueAngle: "Completing and updating templates per-customer, or offering regulatory update monitoring, could be structured as a subscription add-on — creating predictable recurring revenue and deepening the customer relationship over time.",
     tag: "Subscription Opportunity",
@@ -696,7 +723,7 @@ const SERVICE_ITEMS = [
   {
     icon: "🔍",
     title: "Third-Party AI Vendor & Tool Evaluation",
-    summary: "As customers build AI ecosystems using multiple vendors and models — including third-party LLMs — they need a consistent, credible way to evaluate risk. I would help customers assess the governance posture of AI tools and vendors they're adopting, evaluating transparency, bias controls, auditability, and contractual accountability, delivered as a structured vendor scorecard.",
+    summary: "As customers build AI ecosystems using multiple vendors and models — including third-party LLMs — they need a consistent, credible way to evaluate risk. We could help customers assess the governance posture of AI tools and vendors they're adopting, evaluating transparency, bias controls, auditability, and contractual accountability, delivered as a structured vendor scorecard.",
     customerImpact: "SAS fills a critical gap as a trusted, independent voice in vendor evaluation — a role that generic consulting firms lack the technical depth to play credibly. Customers gain a reusable framework that builds internal capability while reducing third-party risk.",
     revenueAngle: "This is a high-value paid advisory engagement requiring bespoke analysis. It also creates a natural opportunity to compare vendor capabilities against SAS's own offerings — a soft but effective positioning play that keeps SAS front of mind during purchasing decisions.",
     tag: "High-Value Advisory Engagement",
@@ -806,7 +833,7 @@ const ValueSection = () => (
     <div style={{ maxWidth: 1200, margin: "0 auto" }}>
       <FadeIn>
         <SectionLabel>How I'll Deliver Value</SectionLabel>
-        <SectionTitle>Expanding the AI Governance service offering.</SectionTitle>
+        <SectionTitle>Expanding the AI Governance service portfolio.</SectionTitle>
         <p style={{
           fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
           fontSize: 17, lineHeight: 1.8, color: COLORS.darkGray,
@@ -824,8 +851,6 @@ const ValueSection = () => (
   </section>
 );
 
-
-
 const ClosingSection = () => (
   <section style={{ padding: "100px 48px", background: COLORS.primary }}>
     <div style={{ maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
@@ -841,7 +866,7 @@ const ClosingSection = () => (
           margin: "0 0 48px", fontWeight: 300,
           fontStyle: "italic",
         }}>
-          "This role is an opportunity to contribute meaningfully to something SAS has already built well — bringing a complementary perspective that spans governance research, product design, and direct customer insight. I bring three things that are hard to find together: deep SAS product and customer knowledge, formal governance credentials exploring why implementation fails in practice, and proven ability to bridge technical and non-technical stakeholders. I'm ready to collaborate, contribute, and help take this work further."
+          "This role is an opportunity to expand something SAS has already built, bringing a complementary perspective that spans governance research, product design, and direct customer insight. I bring three things that are hard to find together: deep SAS product and customer knowledge, formal governance credentials exploring why implementation fails in practice, and proven ability to bridge technical and non-technical stakeholders. I'm ready to collaborate, contribute, and help take this work further."
         </p>
         <p style={{
           fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
