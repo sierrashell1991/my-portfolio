@@ -138,25 +138,25 @@ const NavBar = ({ activeSection }) => {
 
 const FLIP_CARDS = [
   {
-    front: "I built our AI governance tools.",
+    front: "I designed our AI governance tools.",
     back: "I co-designed SAS's AI Navigator, the NIST AI RMF-based Trustworthy AI Life Cycle Workflow, and our patented Model Card. I know exactly how these tools work, where they excel, and where customers need more than our products can give them.",
   },
   {
     front: "I've studied why governance fails.",
-    back: "My UCL Master's research, conducted in partnership with BSI, investigated the organizational hurdles that prevent companies from implementing AI governance. That's not theory — it's the exact friction our customers are experiencing right now.",
+    back: "My UCL Master's research, conducted in partnership with the British Standards Institution (BSI), investigated the organizational hurdles that prevent companies from implementing AI governance. That's not theory — it's the exact friction our customers are experiencing.",
   },
   {
     front: "I already know our customers.",
     back: "I've organized in-depth interviews with SAS customers actively navigating governance challenges, synthesized their pain points, and translated those insights into product priorities.",
   },
   {
-    front: "I can make it credible.",
-    back: "Peer-reviewed publications, a BSI research report, and international conference presentations mean I can produce the thought leadership that positions SAS as the governance authority customers turn to first.",
+    front: "I have the credentials and contribute thought leadership.",
+    back: "A patented governance tool, peer-reviewed publications, a British Standards Institution (BSI) research report, and international conference presentations prove that I'm already producing the thought leadership that positions SAS as the governance authority customers turn to first.",
   },
 ];
 
 const FlipCard = ({ front, back, delay }) => {
-  const [flipped, setFlipped] = useState(false);
+  const [flipped, setFlipped] = useState(false); 
   return (
     <div
       onMouseEnter={() => setFlipped(true)}
@@ -381,7 +381,7 @@ const OpportunitySection = () => (
             fontSize: 17, lineHeight: 1.8, color: COLORS.darkGray,
             margin: 0, fontWeight: 400,
           }}>
-            SAS customers seek to adopt and scale AI, yet face mounting governance requirements. As a trusted partner in Data and AI, SAS already provides a robust service: conducting readiness assessments to benchmark against applicable frameworks, facilitating governance workshops that translate regulatory requirements into actionable internal policies, and delivering tailored risk management guidance, some of which connects governance obligations directly to SAS product capabilities.
+            As a trusted partner in Data and AI, SAS already provides a robust service: conducting readiness assessments to benchmark against applicable frameworks, facilitating governance workshops that translate regulatory requirements into actionable internal policies, and delivering tailored risk management guidance, some of which connects governance obligations directly to SAS product capabilities.
           </p>
         </FadeIn>
 
@@ -398,14 +398,14 @@ const OpportunitySection = () => (
             fontSize: 17, lineHeight: 1.8, color: COLORS.darkGray,
             margin: "24px 0 0", fontWeight: 400,
           }}>
-            My four years designing Trustworthy AI products at SAS means customer-facing advisory work builds on established credibility and deep product knowledge, allowing me to connect governance recommendations directly to what SAS tools actually do.
+            Four years designing Trustworthy AI products at SAS means my customer-facing advisory work is grounded in deep product knowledge — I connect governance recommendations directly to what SAS tools actually do.
           </p>
           <p style={{
             fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
             fontSize: 17, lineHeight: 1.8, color: COLORS.darkGray,
             margin: "24px 0 0", fontWeight: 400,
           }}>
-            My UCL Master's research, conducted in partnership with BSI, specifically investigated the organizational hurdles and disincentives that prevent companies from implementing AI governance mechanisms, which is exactly the friction our advisory service would help customers overcome.
+            My UCL Master's research, conducted in partnership with the British Standards Institution (BSI), specifically investigated the organizational hurdles and misaligned incentives that prevent companies from implementing AI governance mechanisms, which is exactly the friction our advisory service would help customers overcome.
           </p>
           <p style={{
             fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
@@ -822,7 +822,7 @@ const ValueSection = () => (
   <section id="value" className="section-pad" style={{ padding: "100px 48px", background: COLORS.lightGray }}>
     <div style={{ maxWidth: 1200, margin: "0 auto" }}>
       <FadeIn>
-        <SectionLabel>How I'll Deliver Value</SectionLabel>
+        <SectionLabel>My Plan for New Servicves</SectionLabel>
         <SectionTitle>Expanding the AI Governance service portfolio.</SectionTitle>
         <p style={{
           fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
@@ -856,7 +856,7 @@ const ClosingSection = () => (
           margin: "0 0 48px", fontWeight: 300,
           fontStyle: "italic",
         }}>
-          This role is an opportunity to expand something SAS has already built, bringing a complementary perspective that spans governance research, product design, and direct customer insight. I bring three things that are hard to find together: deep SAS product and customer knowledge, formal governance credentials exploring why implementation fails in practice, and proven ability to bridge technical and non-technical stakeholders. I'm ready to collaborate, contribute, and help take this work further.
+          I bring three things that are hard to find together: deep SAS product and customer knowledge, formal governance credentials exploring why implementation fails in practice, and proven ability to bridge technical and non-technical stakeholders. I'm ready to collaborate, contribute, and help take this work further.
         </p>
         <p style={{
           fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
