@@ -147,7 +147,7 @@ const FLIP_CARDS = [
   },
   {
     front: "I already know our customers.",
-    back: "I've organized in-depth interviews with SAS customers actively navigating governance challenges, synthesized their pain points, and translated those insights into product priorities. I'm not starting from zero.",
+    back: "I've organized in-depth interviews with SAS customers actively navigating governance challenges, synthesized their pain points, and translated those insights into product priorities.",
   },
   {
     front: "I can make it credible.",
@@ -643,12 +643,12 @@ const CredentialsSection = () => (
               desc: "Gave a lecture to graduate students of design, focusing on maintaining human expertise and agency when working with and implementing AI tools.",
             },
             {
-              title: "Ethical Design Program Founder",
+              title: "Ethical Design Program",
               meta: "SAS · 2021",
               desc: "Initiated SAS's Ethical Design effort. Facilitated workshops with 18 participants generating 60+ actionable improvements.",
             },
             {
-              title: "Public Speaker and Conference Presenter",
+              title: "Speaking Engagements and Conference Presentations",
               meta: "SAS User Groups · IEEE InfoVis",
               desc: "Multiple presentations demonstrating ability to communicate technical concepts to practitioner and research audiences internationally.",
             },
@@ -677,7 +677,7 @@ const CredentialsSection = () => (
           delay={0.2}
           image={lifecycleImg}
           title="Trustworthy AI Life Cycle Workflow"
-          meta="Co-Designer · NIST AI RMF-Based"
+          meta="Designer · NIST AI RMF-Based"
           summary="Outlines steps for evaluating and deploying a more trustworthy AI system. Makes NIST's recommendations, standards, and best practices for AI risk management easier to adopt and follow in practice."
           link="https://sassoftware.github.io/sas-trustworthy-ai-life-cycle/"
         />
@@ -695,14 +695,6 @@ const CredentialsSection = () => (
 
 const SERVICE_ITEMS = [
   {
-    icon: "🏛️",
-    title: "Industry-Specific AI Governance Playbooks",
-    summary: "Generic governance frameworks often fail in practice — they don't account for the need to harmonize with unique regulatory requirements in financial services, life sciences, government, or insurance. Our team could create tailored playbooks that harmonize sector regulations (SR 11-7, HIPAA, EU AI Act) with AI governance frameworks, giving SAS customers a head start that generic consulting firms simply can't match.",
-    customerImpact: "Sector-specific playbooks dramatically reduce the time customers spend adapting guidance to their context. A financial services firm doesn't want a generic NIST mapping — they want one that speaks to SR 11-7 and model risk management. These playbooks accelerate implementation by meeting customers where they already operate.",
-    revenueAngle: "Playbooks anchor premium paid workshops and differentiate SAS from generic consulting firms that lack deep domain expertise. Each playbook becomes a repeatable commercial asset that can be licensed, updated, and sold across an entire vertical.",
-    tag: "Premium Workshop Anchor",
-  },
-  {
     icon: "📚",
     title: "Responsible AI Policy Library & Template Repository",
     summary: "Most organizations lack the internal expertise to draft AI governance documentation from scratch. I would build a curated, living library of policy templates, acceptable use guidelines, model cards, and risk assessment frameworks, going beyond the context of AI Navigator and policy packs — kept current as regulations evolve across EU AI Act, NIST AI RMF, ISO 42001, and the growing patchwork of state legislation.",
@@ -717,6 +709,14 @@ const SERVICE_ITEMS = [
     customerImpact: "A peer community creates accountability, surfaces best practices faster, and builds the confidence customers need to advance their programs. Think of it as a customer advisory board with community benefits — members become more invested in SAS as a governance partner and gain access to expertise beyond our own team.",
     revenueAngle: "Community membership could be tiered: basic access complimentary, premium membership (including direct advisor access, benchmarking data, and research) offered as a paid subscription. The community also becomes a high-signal channel for product feedback and market intelligence.",
     tag: "Tiered Subscription Model",
+  },
+  {
+    icon: "🏛️",
+    title: "Industry-Specific AI Governance Playbooks",
+    summary: "Generic governance frameworks often fail in practice — they don't account for the need to harmonize with unique regulatory requirements in financial services, life sciences, government, or insurance. Our team could create tailored playbooks that harmonize sector regulations (SR 11-7, HIPAA, EU AI Act) with AI governance frameworks, giving SAS customers a head start that generic consulting firms simply can't match.",
+    customerImpact: "Sector-specific playbooks dramatically reduce the time customers spend adapting guidance to their context. A financial services firm doesn't want a generic NIST mapping — they want one that speaks to SR 11-7 and model risk management. These playbooks accelerate implementation by meeting customers where they already operate.",
+    revenueAngle: "Playbooks anchor premium paid workshops and differentiate SAS from generic consulting firms that lack deep domain expertise. Each playbook becomes a repeatable commercial asset that can be licensed, updated, and sold across an entire vertical.",
+    tag: "Premium Workshop Anchor",
   },
   {
     icon: "🔍",
@@ -856,7 +856,7 @@ const ClosingSection = () => (
           margin: "0 0 48px", fontWeight: 300,
           fontStyle: "italic",
         }}>
-          "This role is an opportunity to expand something SAS has already built, bringing a complementary perspective that spans governance research, product design, and direct customer insight. I bring three things that are hard to find together: deep SAS product and customer knowledge, formal governance credentials exploring why implementation fails in practice, and proven ability to bridge technical and non-technical stakeholders. I'm ready to collaborate, contribute, and help take this work further."
+          This role is an opportunity to expand something SAS has already built, bringing a complementary perspective that spans governance research, product design, and direct customer insight. I bring three things that are hard to find together: deep SAS product and customer knowledge, formal governance credentials exploring why implementation fails in practice, and proven ability to bridge technical and non-technical stakeholders. I'm ready to collaborate, contribute, and help take this work further.
         </p>
         <p style={{
           fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
