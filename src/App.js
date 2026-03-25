@@ -412,7 +412,7 @@ const OpportunitySection = () => (
             fontSize: 17, lineHeight: 1.8, color: COLORS.darkGray,
             margin: "24px 0 0", fontWeight: 400,
           }}>
-            The customer engagement I've already conducted at SAS extends naturally to readiness assessments and workshop design, facilitation, and synthesis.
+            The customer engagement I've already conducted at SAS extends naturally to readiness assessments. My ample experience with workshop design, facilitation, and synthesis will allow me to hit the ground running with these activities.
           </p>
           <p style={{
             fontFamily: "Avenir, 'Avenir Next', 'Century Gothic', sans-serif",
@@ -582,7 +582,7 @@ const CredentialsSection = () => (
             {
               title: "BSI Research Partnership",
               meta: "March–November 2022",
-              desc: "Led interviews with 29 experts from British and global standards bodies, private sector, and UK regulators. Created a workshop utilizing horizon scanning to forecast future AI governance needs.",
+              desc: "Led interviews with 29 experts from British and global standards bodies, private sector executives, and UK regulators. Created a workshop utilizing horizon scanning to forecast future AI governance needs.",
             },
             {
               title: "Published Research",
@@ -611,18 +611,18 @@ const CredentialsSection = () => (
             },
             {
               title: "NIST AI RMF-Based Trustworthy AI Workflow",
-              meta: "Co-Designer",
-              desc: "Actionable, step-by-step governance framework explicitly based on the NIST AI Risk Management Framework. The workflow is provided in Workflow Manager and publicly accessible via GitHub, a perfect tool for many SAS customers.",
+              meta: "Designer",
+              desc: "Actionable, step-by-step governance framework based on the NIST AI Risk Management Framework. The workflow is provided in Workflow Manager and publicly accessible via GitHub, a perfect tool for many SAS customers.",
             },
             {
-              title: "Model Card Patent",
+              title: "Patented Model Card",
               meta: "Inventor",
               desc: "A digestible report card operationalizing model health and bias metrics, rendering AI adoption transparent and model ethics measurable.",
             },
             {
               title: "Customer Governance Research",
               meta: "In-depth interviews + synthesis",
-              desc: "Conducted interviews with SAS customers actively seeking governance solutions. Systematic tagging, synthesis, and pain point analysis that drove product feature prioritization.",
+              desc: "Conducted interviews with SAS customers actively seeking governance solutions. Systematic tagging, synthesis, and pain point analysis drove product feature prioritization.",
             },
           ]}
         />
@@ -638,8 +638,8 @@ const CredentialsSection = () => (
               linkLabel: "Read Article →",
             },
             {
-              title: "Guest Lecture, NC State University",
-              meta: "Master's-level students",
+              title: "Guest Lecture",
+              meta: "NC State University · September 2025",
               desc: "Gave a lecture to graduate students of design, focusing on maintaining human expertise and agency when working with and implementing AI tools.",
             },
             {
@@ -649,7 +649,7 @@ const CredentialsSection = () => (
             },
             {
               title: "Speaking Engagements and Conference Presentations",
-              meta: "SAS User Groups · IEEE InfoVis",
+              meta: "SAS User Groups · IEEE InfoVis· BSI Standards Conference",
               desc: "Multiple presentations demonstrating ability to communicate technical concepts to practitioner and research audiences internationally.",
             },
           ]}
