@@ -146,11 +146,11 @@ const FLIP_CARDS = [
     back: "My UCL Master's research, conducted in partnership with the British Standards Institution (BSI), investigated the organizational hurdles that prevent companies from implementing AI governance. That's not theory — it's the exact friction our customers are experiencing.",
   },
   {
-    front: "I already know our customers.",
+    front: "I know our customers.",
     back: "I've organized in-depth interviews with SAS customers actively navigating governance challenges, synthesized their pain points, and translated those insights into product priorities.",
   },
   {
-    front: "I have the credentials and contribute thought leadership.",
+    front: "I already contribute thought leadership.",
     back: "A patented governance tool, peer-reviewed publications, a British Standards Institution (BSI) research report, and international conference presentations prove that I'm already producing the thought leadership that positions SAS as the governance authority customers turn to first.",
   },
 ];
